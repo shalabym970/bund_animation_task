@@ -1,4 +1,6 @@
+import 'package:d_chart/commons/data_model.dart';
 import 'package:d_chart/d_chart.dart';
+import 'package:d_chart/ordinal/bar.dart';
 
 import 'package:flutter/material.dart';
 import 'package:get/get_state_manager/src/simple/get_view.dart';
@@ -42,7 +44,25 @@ class HomeView extends GetView<HomeController> {
                   labelFontSize: 0)),
           const Center(
             child: Text('fkjf'),
-          )
+          ),
+
+
+          AspectRatio(
+            aspectRatio: 16 / 9,
+            child: DChartBarO(
+              groupList: [
+                OrdinalGroup(
+                  id: '1',
+                  data: [
+                    OrdinalData(domain: 'Mon', measure: 2),
+                    OrdinalData(domain: 'Tue', measure: 6),
+                    OrdinalData(domain: 'Wed', measure: 3),
+                    OrdinalData(domain: 'Thu', measure: 7),
+                  ],
+                ),
+              ],
+            ),
+          ),
         ]));
   }
 }
